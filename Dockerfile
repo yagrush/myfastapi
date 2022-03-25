@@ -1,4 +1,4 @@
-FROM --platform=linux/x86-64 python:3.11-rc
+FROM --platform=linux/x86-64 python:3.10
 
 RUN apt update -y
 

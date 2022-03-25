@@ -16,3 +16,9 @@ services:
     ports:
       - 8000:8000
       - 5678:5678
+    networks:
+      - myfastapi
+networks:
+  myfastapi:
+    name: myfastapi
+    driver: bridge

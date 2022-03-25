@@ -31,7 +31,7 @@ https://www.docker.com/
 
 <br />
 
-## 実行方法
+## FastAPI起動
 
 ### この一式を、Gitを使ってダウンロードします
 
@@ -51,5 +51,8 @@ cd myfastapi
 ```
 docker-compose up --build -d
 ```
+
+## pytest実行
+
 
 （編集中）

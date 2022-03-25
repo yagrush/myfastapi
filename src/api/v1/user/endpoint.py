@@ -41,9 +41,11 @@ response_definition_get = {
     "tags": ["サンプルAPI"],
 }
 
+url_get = "/v%s/%s" % (API_VERSION, API_NAME)
 
-@router.get("/v%s/%s/{user_id}" % (API_VERSION, API_NAME), **response_definition_get)
-async def user(
+
+@router.get(url_get + "/{user_id}", **response_definition_get)
+async def get(
     user_id: str,
 ):
     return {
@@ -78,14 +80,14 @@ response_definition_post = {
     "tags": ["サンプルAPI"],
 }
 
+url_post = "/v%s/%s" % (API_VERSION, API_NAME)
 
-@router.post("/v%s/%s/{user_id}" % (API_VERSION, API_NAME), **response_definition_post)
-async def user(
-    # post_params: PostParamsModel = Depends(post_params_model),
+
+@router.post(url_post + "/{user_id}", **response_definition_post)
+async def post(
     user_id: str,
 ):
     return {
-        # "user_id": post_params.user_id,
         "user_id": user_id,
     }
 
@@ -134,8 +136,8 @@ response_definition_post_by_form = {
 }
 
 
-@router.post("/v%s/%s" % (API_VERSION, API_NAME), **response_definition_post_by_form)
-async def user(
+@router.post(url_post, **response_definition_post_by_form)
+async def post_by_form(
     post_params: PostParamsModel = Depends(post_params_model),
 ):
     return {

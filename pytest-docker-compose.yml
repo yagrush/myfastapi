@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  pytest:
+    container_name: myfastapi-pytest
+    build:
+      context: .
+      dockerfile: ./pytest.Dockerfile
+    volumes:
+      - ./src:/src
+    ports:
+      - 8100:8100
+    networks:
+      - myfastapi-pytest
+networks:
+  myfastapi-pytest:
+    name: myfastapi-pytest
+    driver: bridge
