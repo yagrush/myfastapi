@@ -5,13 +5,11 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 
-from routers.router import router
-
 version = "0.0.0"
 
 app = FastAPI(
     title="my FastAPI",
-    description="",
+    description="DockerとFastAPIで手軽にRESTAPIサーバを構築するサンプル。",
     version=version,
 )
 
@@ -53,4 +51,6 @@ async def custom_middleware(req: Request, call_next):
     return response
 
 
-app.include_router(router)
+from api.v1 import v1_router as api_router
+
+app.include_router(api_router)
