@@ -10,7 +10,7 @@ services:
     volumes:
       - ./src:/src
     ports:
-      - 8100:8100
+      - 8100:8100 # 通常起動のFastAPIとポートが被らないように変えてある
     networks:
       - myfastapi-pytest
 networks:
