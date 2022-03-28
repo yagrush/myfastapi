@@ -3,6 +3,8 @@
 FastAPIをDockerで実行するテンプレート一式です。
 <br />
 PythonとFastAPIを使ったRESTAPIサーバがすぐに試せます。
+<br />
+また、pytestを使ってAPIのテストコードをDockerで実行するサンプルも付いています。
 
 <br />
 
