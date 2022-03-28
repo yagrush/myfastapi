@@ -68,9 +68,8 @@ docker-compose up --build -d
 
 ### APIドキュメントにアクセスしてみます
 
-ブラウザで↓を開きます。
-http://localhost:8000/docs
-<br />
+ブラウザで↓を開きます。<br />
+http://localhost:8000/docs<br />
 * FastAPIは自動的にAPIドキュメントを生成してくれます。<br />
 ここからAPIを実際に実行することも可能です。
 
@@ -109,8 +108,11 @@ GET `/`<br/>
 ### ためしに、ブラウザからもアクセスしてみます
 
 ↓をブラウザで開きます。<br />
+
 http://localhost:8000/<br />
+
 ↓<br />
+
 ![APIドキュメント画面](assets/api_test4.png "api_docs")
 
 <br />
