@@ -4,6 +4,7 @@ from typing import Dict
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
+from loguru import logger
 
 version = "0.0.0"
 
@@ -25,7 +26,9 @@ app.add_middleware(
 # NOTE: OpenAPI（Swagger仕様）のエントリー関数
 @app.get("/docs", include_in_schema=False)
 async def get_swagger_ui():
-    return get_swagger_ui_html(openapi_url="/openapi.json", title=app.title + " - APIドキュメント")
+    return get_swagger_ui_html(
+        openapi_url="/openapi.json", title=app.title + " - APIドキュメント"
+    )
 
 
 @app.get(
@@ -47,7 +50,7 @@ async def custom_middleware(req: Request, call_next):
     start = time.time()
     response = await call_next(req)
     end = time.time()
-    print(f"API:{url} 所要時間：{end-start}秒")
+    logger.info(f"API:{url} 所要時間：{end-start}秒")
     return response
 
 
